@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/img/BISUM logo.png" type="image/x-icon" />
+    <title>PHOTIZO | Registration Table</title>
+</head>
+<body>
+  <style>
+    table { 
+      width: 750px; 
+      border-collapse: collapse; 
+      margin:50px auto;
+      }
+
+    /* Zebra striping */
+    tr:nth-of-type(odd) { 
+      background: #eee; 
+      }
+
+    th { 
+      background: #3498db; 
+      color: white; 
+      font-weight: bold; 
+      }
+
+    td, th { 
+      padding: 10px; 
+      border: 1px solid #ccc; 
+      text-align: left; 
+      font-size: 18px;
+      }
+
+    /* 
+    Max width before this PARTICULAR table gets nasty
+    This query will take effect for any screen smaller than 760px
+    and also iPads specifically.
+    */
+    @media 
+    only screen and (max-width: 760px),
+    (min-device-width: 768px) and (max-device-width: 1024px)  {
+
+      table { 
+          width: 100%; 
+      }
+
+      /* Force table to not be like tables anymore */
+      table, thead, tbody, th, td, tr { 
+        display: block; 
+      }
+      
+      /* Hide table headers (but not display: none;, for accessibility) */
+      thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+      
+      tr { border: 1px solid #ccc; }
+      
+      td { 
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee; 
+        position: relative;
+        padding-left: 50%; 
+      }
+
+      td:before { 
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+        /* Label the data */
+        content: attr(data-column);
+
+        color: #000;
+        font-weight: bold;
+      }
+
+    }
+    .my-container{
+      width: 90%;
+      max-width: 1000px;
+      display: flex;
+      justify-content: center;
+      margin-inline: auto;
+    }
+  </style>
+  <div class="text-center">
+    <h1>Registration Table</h1>
+  </div>
+  <table>
+    <thead>
+        <tr>
+            <th>S/N</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Mobile Number</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Occupation</th>
+            <th>Attendance</th>
+            <th>Learnings</th>
+            <th>Others</th>
+            <th>Email</th>
+            <th>Receipt</th>
+        </tr>
+    </thead>
+    <tbody class="table-hover">
+        <%if (photizoUser && photizoUser.length > 0) {%>
+            <% photizoUser.forEach((user, index) => { %>
+              <tr>
+                <td data-column="Serial No"><%= user.serialNo %></td>
+                <td data-column="Name"><%= user.lastName %> <%= user.firstName %></td>
+                <td data-column="Gender"><%= user.gender %></td>
+                <td data-column="Age"><%= user.age %></td>
+                <td data-column="Mobile Number"><%= user.mobileNumber %></td>
+                <td data-column="City"><%= user.city %></td>
+                <td data-column="State"><%= user.state %></td>
+                <td data-column="Occupation"><%= user.occupation %></td>
+                <td data-column="Attendance"><%= user.attendance %></td>
+                <td data-column="Learnings"><%= user.learnings %> </td>
+                <td data-column="Others"><%= user.otherLearnings %> </td>
+                <td data-column="Email"><%= user.email %></td>
+                <td data-column="Receipt"><img width="100" height="100" src="<%= user.photo %>" alt="..."></td>
+              </tr>
+            <% }) %>
+          <% } else { %>
+            <% } %>
+          
+    </tbody>
+  </table>
+</body>
+</html>
