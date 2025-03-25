@@ -19,6 +19,7 @@
       .my-container {
         width: 90%;
         max-width: 1000px;
+        z-index: 100;
         display: flex;
         justify-content: center;
         margin-inline: auto;
@@ -68,45 +69,46 @@
             /* Adjust icon size as needed */
         }
     </style>
-    <!-- flash error and success -->
-    <div class="my-container top-layer">
-      <% if (error && error.length > 0) { %>
-      <div id="error-alert" class="alert alert-error" role="alert">
-        <%= error[0] %>
-      </div>
-      <script>
-        const errorAlert = document.getElementById("error-alert");
 
-        // Ensure errorAlert exists before setting timeout
-        if (errorAlert) {
-          setTimeout(() => {
-            errorAlert.style.display = "none";
-          }, 5000); // 30 seconds in milliseconds
-        }
-      </script>
-      <% } else if (success && success.length > 0) { %>
-      <div id="success-alert" class="alert alert-success" role="alert">
-        <%= success[0] %>
-      </div>
-      <script>
-        const successAlert = document.getElementById("success-alert");
-
-        // Ensure successAlert exists before setting timeout
-        if (successAlert) {
-          setTimeout(() => {
-            successAlert.style.display = "none";
-          }, 5000); // 30 seconds in milliseconds
-        }
-      </script>
-      <% } %>
-    </div>
 
     <video autoplay muted loop class="video-bg">
         <source src="assets/img/back-video.mp4" type="video/mp4">
     </video>
     <div class="overlay"></div>
-    
+    <!-- flash error and success -->
+    <div class="my-container top-layer">
+        <% if (error && error.length > 0) { %>
+        <div id="error-alert" class="alert alert-error" role="alert">
+            <%= error[0] %>
+        </div>
+        <script>
+            const errorAlert = document.getElementById("error-alert");
+
+            // Ensure errorAlert exists before setting timeout
+            if (errorAlert) {
+            setTimeout(() => {
+                errorAlert.style.display = "none";
+            }, 5000); // 30 seconds in milliseconds
+            }
+        </script>
+        <% } else if (success && success.length > 0) { %>
+        <div id="success-alert" class="alert alert-success" role="alert">
+            <%= success[0] %>
+        </div>
+        <script>
+            const successAlert = document.getElementById("success-alert");
+
+            // Ensure successAlert exists before setting timeout
+            if (successAlert) {
+            setTimeout(() => {
+                successAlert.style.display = "none";
+            }, 5000); // 30 seconds in milliseconds
+            }
+        </script>
+        <% } %>
+    </div>
     <div class="container center-container">
+
         <div class="row content bg-white p-4 rounded shadow-lg d-flex flex-md-row flex-column-reverse">
             <div class="col-md-6 d-flex flex-column justify-content-center mb-5">
                 <h2 class="text-dark mb-3">Something Big is Coming!!!</h2>
