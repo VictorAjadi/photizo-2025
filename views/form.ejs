@@ -47,6 +47,8 @@
         }
 
         .form_container {
+            overflow-y: hidden;
+            height: 650px;
             display: flex;
             max-width: 80%;
             width: 100%;
@@ -57,7 +59,11 @@
             flex-direction: row;
             /* Default to row */
         }
-
+        @media (max-width: 990px) {
+            .form_container{
+                overflow-y: scroll;
+            }
+        }
         .guide-section {
             background-color: orangered;
             color: white;
@@ -76,7 +82,6 @@
             width: 60%;
             /* Set width for larger screens */
             flex-grow: 1;
-            /* Allow to grow to fill space */
         }
 
         .guide-section h2,
@@ -182,7 +187,7 @@
         }
       </style>
 
-    <div class="form_container d-md-flex">
+    <div class="form_container d-md-flex my-5">
         <div class="guide-section col-md-5">
             <h4 class="text-center text-white">Account Details</h4>
             <div class="section-divider mb-4">
@@ -190,7 +195,7 @@
                 <p class="text-white">Bank: Polaris Bank</p>
                 <p class="text-white">Bank Name: Higher Ground Baptist Church</p>
                 <p class="text-white">Account No: 1140056637</p>
-                <p class="text-white">Description: Your Name - BISUM 2024</p>
+                <p class="text-white">Description: Your Name - PHOTIZO 2025</p>
             </div>
 
             <h4 class="text-center text-white">Registration Guide</h4>
