@@ -250,19 +250,19 @@
             <h4 style="color: orangered;">REGISTER FORM</h4>
             <form id="registerForm" method="post" action="/photizo/register" enctype="multipart/form-data">
                 <!-- Name Fields -->
-                <div class="row g-3 mb-3">
-                    <div class="col">
+                <div class="row gap-3 mb-3">
+                    <div class="col order-2 order-md-1 order-lg-1 order-xl-1">
                         <input type="text" class="form-control" name="firstName" placeholder="First Name" required
                             aria-label="First Name">
                     </div>
-                    <div class="col">
+                    <div class="col order-1 order-md-2 order-lg-2 order-xl-2">
                         <input type="text" class="form-control" name="lastName" placeholder="Last Name" required aria-label="Last Name">
                     </div>
                 </div>
 
                 <!-- Gender and Age Range -->
-                <div class="row g-3 mb-3">
-                    <div class="col">
+                <div class="row gap-3 mb-3">
+                    <div class="col order-2 order-md-1 order-lg-1 order-xl-1">
                         <select id="gender" name="gender" class="form-select" required aria-label="Gender">
                             <option selected disabled>Gender</option>
                             <option>Male</option>
@@ -270,7 +270,7 @@
                             <option>Other</option>
                         </select>
                     </div>
-                    <div class="col">
+                    <div class="col order-1 order-md-2 order-lg-2 order-xl-2">
                         <select id="age-range" name="age" class="form-select" required aria-label="Age Range">
                             <option selected disabled>Age Range</option>
                             <option>11-20</option>
@@ -287,22 +287,22 @@
                 </div>
 
                 <!-- Email and Phone Number -->
-                <div class="row g-3 mb-3">
-                    <div class="col">
+                <div class="row gap-3 mb-3">
+                    <div class="col order-2 order-md-1 order-lg-1 order-xl-1">
                         <input type="email" name="email" class="form-control" placeholder="Email" required aria-label="Email">
                     </div>
-                    <div class="col">
+                    <div class="col order-1 order-md-2 order-lg-2 order-xl-2">
                         <input type="tel" class="form-control" name="mobileNumber" placeholder="Phone Number" required
                             aria-label="Phone Number">
                     </div>
                 </div>
 
                 <!-- City and State -->
-                <div class="row g-3 mb-3">
-                    <div class="col">
+                <div class="row gap-3 mb-3">
+                    <div class="col order-2 order-md-1 order-lg-1 order-xl-1">
                         <input type="text" class="form-control" name="city" placeholder="City" required aria-label="City">
                     </div>
-                    <div class="col">
+                    <div class="col order-1 order-md-2 order-lg-2 order-xl-2">
                         <input type="text" class="form-control" name="state" placeholder="State" required aria-label="State">
                     </div>
                 </div>
