@@ -38,7 +38,7 @@ window.addEventListener("scroll", function () {
 // ------------------------------------
 
 // Set the target date (YYYY, MM - 1, DD, HH, MM, SS)
-const eventDate = new Date(2025, 5, 20, 9, 0, 0); // Example: June 20, 2025, 09:00 AM
+const eventDate = new Date(2025, 4, 8, 17, 0, 0); 
 
 function updateCountdown() {
     const now = new Date();
